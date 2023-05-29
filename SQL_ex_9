@@ -1,0 +1,70 @@
+CREATE TABLE CUSTOMER(
+ID INT AUTO_INCREMENT,
+NAME VARCHAR(255),
+PIZZA_LOVER BOOLEAN,
+AGE INT,
+PRIMARY KEY (ID)
+);
+
+INSERT INTO CUSTOMER(NAME, PIZZA_LOVER, AGE)
+VALUES ('Franco', TRUE, 23);
+INSERT INTO CUSTOMER(NAME, PIZZA_LOVER, AGE)
+VALUES ('Anna', FALSE, 57);
+INSERT INTO CUSTOMER(NAME, PIZZA_LOVER, AGE)
+VALUES ('Lucrezia', TRUE, 129);
+
+SELECT * FROM CUSTOMER AS EX_INIZIO;
+
+UPDATE CUSTOMER
+SET AGE = 26
+WHERE ID = 3;
+
+SELECT * FROM CUSTOMER AS EX_01;
+
+DELETE FROM CUSTOMER
+WHERE ID = 2;
+
+SELECT * FROM CUSTOMER AS EX_02;
+
+TRUNCATE CUSTOMER;
+
+-- Look at the tables below and write which column(s) you think would make a good primary key
+
+-- ex 6
+
+CREATE TABLE Customers (
+ customer_id INT NOT NULL AUTO_INCREMENT,
+ first_name VARCHAR(255) NOT NULL,
+ last_name VARCHAR(255) NOT NULL,
+ email VARCHAR(255) NOT NULL,
+ PRIMARY KEY (customer_id)
+);
+-- customer_id è la migliore primary key
+
+-- ex 7
+CREATE TABLE Products (
+ product_name VARCHAR(255) NOT NULL,
+ product_description VARCHAR(255) NOT NULL,
+ product_price DECIMAL(10, 2) NOT NULL,
+ product_quantity INT NOT NULL,
+ PRIMARY KEY(product_name)
+);
+-- product_name è la migliore primary key
+
+-- ex 8
+CREATE TABLE Orders (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ customer_id INT NOT NULL,
+ expected_arrival_time DATE,
+ PRIMARY KEY(order_id)
+);
+-- order_id è la migliore primary key
+
+-- ex 9
+CREATE TABLE Product_Orders (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ product_name VARCHAR(255) NOT NULL,
+ total_revenue DOUBLE
+ PRIMARY KEY(order_id)
+);
+-- order_id è la migliore primary key
